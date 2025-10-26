@@ -26,6 +26,7 @@ public class CarController {
          String inputAttemptRead = inputView.inputAttemptRead();
          int attemptNum = validateAttempt(inputAttemptRead);
 
+         carRacingService.playRace(carsName, attemptNum);
      }
 
      private List<String> validateRoster(String inputView){
