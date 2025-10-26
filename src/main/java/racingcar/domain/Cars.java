@@ -28,4 +28,29 @@ public class Cars {
         }
     }
 
+    public List<String> getWinners(){
+
+        int maxPosition = findMaxPosition();
+        List<String> winners = new ArrayList<>();
+
+        for(Car car : this.cars){
+            if(car.getPosition() == maxPosition){
+                winners.add(car.getName());
+            }
+        }
+        return winners;
+    }
+
+    private int findMaxPosition(){
+
+        int maxPosition = 0;
+
+        for(Car  car: this.cars){
+            if(car.getPosition() > maxPosition){
+                maxPosition = car.getPosition();
+            }
+        }
+        return maxPosition;
+    }
+
 }
